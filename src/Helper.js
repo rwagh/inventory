@@ -57,8 +57,12 @@ class Helper {
             }
         }
         // Gets the single product
-    async get(id) {
+    async get(id, currency) {
             let promise;
+            let rate;
+            if (currency && currency.trim().toUpperCase() !== "USD") {
+                rate = await getExchangeRate(currency);
+            }
             if (id && Number(id) > 0) {
                 promise = new Promise(function(resolve, reject) {
                     db.get(`SELECT id, name, description, price, viewed FROM products WHERE id = ?`, id, (err, rows) => {
@@ -76,7 +80,13 @@ class Helper {
                     });
                 });
             }
-            return await promise;
+            let result = await promise;
+            if (rate) {
+                let keys = Object.keys(rate.quotes);
+                let ex = rate.quotes[keys[0]];
+                result.price = result.price * ex;
+            }
+            return result;
         }
         // Gets the list of products
     async list(args) {
