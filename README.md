@@ -19,5 +19,5 @@ Product table contains following columns:
   <li>Get - Get single product</li>
   <li>List - List all products with parameters like name, description and price and currency</li>
   <li>Polular - List of the most viewed products using parameters like top and currency</li>
-  <li>Delete</li>
+  <li>Delete - Mark product as deleted</li>
 </ul>
