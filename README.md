@@ -8,6 +8,7 @@ Objective of building this API is to mange products. API build using SQLite embe
   <li>Web framework - Express</li>
   <li>Database - SQLite Embeded</li>
 </ul>
+
 ### Products Table
 Product table contains following columns:
 <ul>
