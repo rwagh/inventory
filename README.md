@@ -1,5 +1,5 @@
 # Product Management API
-Objective of building this API is to mange products. API sample is build using SQLite embeded database, which contains a table called products.
+Objective of building this API is to mange products. API build using SQLite embeded database, which contains a table called products.
 
 ### Products Table
 Product table contains following columns:
