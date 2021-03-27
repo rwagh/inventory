@@ -22,10 +22,69 @@ Product table contains following columns:
 </ul>
 
 ### API Methods
-<ul>
-  <li>Add - Add new product</li>
-  <li>Get - Get single product using parameters like id and currency</li>
-  <li>List - List all products with parameters like name, description and price and currency</li>
-  <li>Polular - List of the most viewed products using parameters like top and currency</li>
-  <li>Delete - Mark product as deleted</li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>API</th>
+      <th>METHOD</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        /product/add
+      </td>
+      <td>
+        POST
+      </td>
+      <td>
+        Add new product
+      </td>
+    </tr>
+    <tr>
+      <td>
+        /product/:id/:currency?
+      </td>
+      <td>
+        GET
+      </td>
+      <td>
+        Gets single product
+      </td>
+    </tr>
+    <tr>
+      <td>
+        /product/list
+      </td>
+      <td>
+        POST
+      </td>
+      <td>
+        List all products with parameters like name, description and price and currency
+      </td>
+    </tr>
+    <tr>
+      <td>
+        /product/polular
+      </td>
+      <td>
+        POST
+      </td>
+      <td>
+        List of the most viewed products using parameters like top and currency
+      </td>
+    </tr>
+    <tr>
+      <td>
+        /product/:id
+      </td>
+      <td>
+        DELETE
+      </td>
+      <td>
+        Mark product as deleted
+      </td>
+    </tr>
+  </tbody>
+</table>

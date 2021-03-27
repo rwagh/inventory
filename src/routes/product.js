@@ -20,14 +20,15 @@ router.post('/add', async(req, res) => {
 router.get('/:id/:currency?', async(req, res) => {
     let id = req.params.id;
     let currency = req.params.currency;
-    try {
+    console.log("welcome to single");
+    /* try {
         let row = await helper.get(id, currency);
         res.status(200).send({...row });
     } catch (err) {
         res.status(400).send({
             error: err.message
         });
-    }
+    } */
 });
 
 router.delete('/:id', async(req, res) => {
@@ -56,11 +57,15 @@ router.post('/list', async(req, res) => {
     }
 });
 
-router.get('/popular/:top/:currency?', async(req, res) => {
-    let top = req.params.top;
-    let currency = req.params.currency;
+router.post('/popular', async(req, res) => {
+
+    let top = req.body.top;
+    let currency = req.body.currency;
+
+    console.log(top, currency);
     try {
         let list = await helper.most_viewed(top, currency);
+        console.log(list);
         res.status(200).send(list);
     } catch (err) {
         res.status(400).send({
