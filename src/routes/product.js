@@ -17,10 +17,11 @@ router.post('/add', async(req, res) => {
     }
 });
 
-router.get('/:id', async(req, res) => {
+router.get('/:id/:currency?', async(req, res) => {
     let id = req.params.id;
+    let currency = req.params.currency;
     try {
-        let row = await helper.get(id);
+        let row = await helper.get(id, currency);
         res.status(200).send({...row });
     } catch (err) {
         res.status(400).send({
