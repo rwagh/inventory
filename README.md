@@ -24,7 +24,7 @@ Product table contains following columns:
 ### API Methods
 <ul>
   <li>Add - Add new product</li>
-  <li>Get - Get single product</li>
+  <li>Get - Get single product using parameters like id and currency</li>
   <li>List - List all products with parameters like name, description and price and currency</li>
   <li>Polular - List of the most viewed products using parameters like top and currency</li>
   <li>Delete - Mark product as deleted</li>
