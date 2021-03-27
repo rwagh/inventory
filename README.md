@@ -9,7 +9,7 @@ Product table contains following columns:
   <li>description - text and is optional</li>
   <li>price - numeric and not null</li>
   <li>deleted - boolean with default value 0</li>
-  <li>viewed - integer for incrementing the value when the product is viewed<li>
+  <li>viewed - integer for incrementing the value when the product is viewed</li>
   <li>createdat- text to store timestamp</li>
 </ul>
 
