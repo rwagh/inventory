@@ -1,7 +1,7 @@
 # Product Management API
 Objective of building this API is to mange products. API build using SQLite embeded database, which contains a table called products.
 
-### Tooles and Technologies involved 
+### Tools and Technologies involved 
 <ul>
   <li>IDE - Visual Studio Code</li>
   <li>Programming Language - JavaScript (NodeJS)</li>
