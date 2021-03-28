@@ -38,7 +38,6 @@ class Helper {
 
             let promise = new Promise(function(resolve, reject) {
                 db.run("INSERT INTO products(name, description, price) VALUES (?,?,?)", name, description, price, (err) => {
-                    console.log(err);
                     if (err) {
                         reject(err);
                     } else {
@@ -107,7 +106,6 @@ class Helper {
         let rate;
         if (currency && currency.trim().toUpperCase() !== "USD") {
             rate = await this.getExchangeRate(currency);
-            console.log(rate);
         }
         let query = 'SELECT id, name, description, price, viewed FROM products WHERE deleted = 0';
         if (where && where.trim().length > 0) {
@@ -147,9 +145,8 @@ class Helper {
         return data;
     }
     async most_viewed(top, currency) {
-        console.log("welcome");
         let limit = 5;
-        if (top && top > 5) {
+        if (top && top > 0) {
             limit = top;
         }
         let query = `SELECT id, name, description, price, viewed FROM products 
@@ -170,7 +167,7 @@ class Helper {
         });
 
         let result = await promise;
-        console.log(result);
+
         let data = result.map(x => {
             if (rate && !rate.errors) {
                 let keys = Object.keys(rate.quotes);
